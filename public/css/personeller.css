@@ -1,0 +1,177 @@
+a{
+    text-decoration: none;
+}
+.containerr{
+    padding: 20px;
+}
+.konumm{
+    display: flex;
+justify-content: center;
+align-items: center;
+min-height: 70vh;
+}
+.konum{
+
+display: none; /* Başlangıçta form gizli */ 
+}
+.containe{
+max-width: 700px;
+width: 100%;
+background-color: #fff;
+padding: 25px 30px;
+border-radius: 5px;
+box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.content form .user-details{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+margin-bottom: 15px;
+width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+display: block;
+font-weight: 500;
+margin-bottom: 5px;
+}
+.user-details .input-box input{
+height: 45px;
+width: 100%;
+outline: none;
+font-size: 16px;
+border-radius: 5px;
+padding-left: 15px;
+border: 1px solid #ccc;
+border-bottom-width: 2px;
+transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+border-color: #9b59b6;
+}
+form .yetki-details .yetki-title{
+font-size: 20px;
+font-weight: 500;
+}
+form .category{
+display: flex;
+width: 80%;
+margin: 14px 0 ;
+justify-content: space-between;
+}
+form .category label{
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+form .category label .sinif{
+height: 18px;
+width: 18px;
+border-radius: 50%;
+margin-right: 10px;
+background: #d9d9d9;
+border: 5px solid transparent;
+transition: all 0.3s ease;
+}
+#sinif-1:checked ~ .category label .one,
+#sinif-2:checked ~ .category label .two,
+#sinif-3:checked ~ .category label .three{
+background: #9b59b6;
+border-color: #d9d9d9;
+}
+form input[type="radio"]{
+display: none;
+}
+form .button{
+height: 45px;
+margin: 35px 0
+}
+form .button input{
+height: 100%;
+width: 100%;
+color: #fff;
+font-size: 18px;
+font-weight: 500;
+letter-spacing: 1px;
+cursor: pointer;
+transition: all 0.3s ease;
+background:  rgb(42,33,133);
+}
+@media(max-width: 584px){
+.container{
+max-width: 100%;
+}
+form .user-details .input-box{
+margin-bottom: 15px;
+width: 100%;
+}
+form .category{
+width: 100%;
+}
+.content form .user-details{
+max-height: 300px;
+overflow-y: scroll;
+}
+.user-details::-webkit-scrollbar{
+width: 5px;
+}
+}
+@media(max-width: 459px){
+.container .content .category{
+flex-direction: column;
+}
+}
+body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+    .button-container {
+        position: absolute;
+        margin-top:250px;
+        top: 20px;
+        right: 20px;
+    }
+    .btm{
+        width: 100px;
+        height: 45px;
+        background: #fff;
+        border: none;
+        outline: none;
+        border-radius: 3px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        cursor: pointer;
+        font-size: 16px;
+        background-color: rgb(42,33,133);
+        color: white;
+        font-weight: 600;
+    }
+
+  
+    .konum {
+        display: none; /* Başlangıçta form gizli */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 600px;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1001; /* Formun üstte kalmasını sağlar */
+    }
+    .overlay {
+        display: none; /* Başlangıçta gizli */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 1 , 0.5);
+        z-index: 1000; /* Overlay'in formun altına ve diğer içeriklerin üstüne gelmesini sağlar */
+    }
+    
