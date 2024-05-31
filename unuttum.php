@@ -24,7 +24,7 @@ if ($_POST) {
             $calis = $sorgu->execute(array($kod, $email));
             if ($calis){
                 $mesaj = "Merhaba Şifrenizi Alttaki Kodu Kullanarak Yenileyebilirsiniz
-                                     Tek Kullanımlık Kodun:.$kod
+                                     Tek Kullanımlık Kodunuz:.$kod
                                  LÜTFEN KODUNUZU KİMSEYLE Paylaşmayın";
                
             
