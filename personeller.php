@@ -351,7 +351,7 @@ $(document).ready(function() {
         // Yetki kontrolü
 
         var yetkiBilgisi = <?php echo json_encode($kBilgi['yetki']); ?>;
-        if (yetkiBilgisi != "1") {
+        if (yetkiBilgisi != 1) {
             Swal.fire({
                 icon: 'error',
                 title: 'Yetkiniz Yok!',

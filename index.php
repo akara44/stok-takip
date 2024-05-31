@@ -138,9 +138,9 @@ $kBilgi = $sessionManager->kullaniciBilgi();
           include ("magazalar.php");   //çağrılan sayfa
           break; 
 
-          case "sil":            // gete eitse
-            include ("sil.php");   //çağrılan sayfa
-            break;    
+        //   case "sil":            // gete eitse
+        //     include ("sil.php");   //çağrılan sayfa
+        //     break;    
 
  
 	 }
