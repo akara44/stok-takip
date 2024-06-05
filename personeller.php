@@ -243,60 +243,6 @@ $(document).ready(function() {
         "pageLength": 10
     });
 
-    // Güncelleme butonu için click olayı
-    // $('#kullanici_table tbody').on('click', '.btn-update', function() {
-    //     var data = table.row($(this).parents('tr')).data();
-    //     console.log("Güncellenecek Kullanıcının ID'si: " + data.id); // Kullanıcının ID'sini konsola yazdır
-    //     // Diğer güncelleme işlemleri...
-    //     $('#update_id').val(data.id);
-    //     $('#update_isim').val(data.isim);
-    //     $('#update_soyisim').val(data.soyisim);
-    //     $('#update_email').val(data.email);
-    //     $('#update_yetki').val(data.yetki);
-
-    //     // Güncelleme formunu göster
-    //     $('#updateForm').show();
-    // });
-
-    // Kullanıcı güncelleme fonksiyonu
-    function updateUser() {
-        var id = $('#update_id').val();
-        var isim = $('#update_isim').val();
-        var soyisim = $('#update_soyisim').val();
-        var email = $('#update_email').val();
-        var yetki = $('#update_yetki').val();
-
-        $.ajax({
-            type: "POST",
-            url: "guncelle.php",
-            data: { id: id, isim: isim, soyisim: soyisim, email: email, yetki: yetki },
-            success: function(response) {
-                var result = JSON.parse(response);
-                if (result.success) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Başarılı!',
-                        text: 'Kullanıcı başarıyla güncellendi.',
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'Tamam'
-                    });
-                    // Güncelleme işlemi başarılı ise tabloyu yenile
-                    table.ajax.reload();
-                    // Formu gizle
-                    $('#updateForm').hide();
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Hata!',
-                        text: result.error,
-                        confirmButtonColor: '#d33',
-                        confirmButtonText: 'Tamam'
-                    });
-                }
-            }
-        });
-    }
-
     // Her satıra butonları ekleme
     table.on('draw', function() {
         $('#kullanici_table tbody tr').each(function() {
@@ -305,44 +251,6 @@ $(document).ready(function() {
                                                '<button class="btn-update" data-id="' + data.id + '">Güncelle</button>');
         });
     });
-    // Kullanıcı güncelleme fonksiyonu
-    function updateUser() {
-        var id = $('#update_id').val();
-        var isim = $('#update_isim').val();
-        var soyisim = $('#update_soyisim').val();
-        var email = $('#update_email').val();
-        var yetki = $('#update_yetki').val();
-
-        $.ajax({
-            type: "POST",
-            url: "guncelle.php",
-            data: { id: id, isim: isim, soyisim: soyisim, email: email, yetki: yetki },
-            success: function(response) {
-                var result = JSON.parse(response);
-                if (result.success) {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Başarılı!',
-                        text: 'Kullanıcı başarıyla güncellendi.',
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'Tamam'
-                    });
-                    // Güncelleme işlemi başarılı ise tabloyu yenile
-                    table.ajax.reload();
-                    // Formu gizle
-                    $('#updateForm').hide();
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Hata!',
-                        text: result.error,
-                        confirmButtonColor: '#d33',
-                        confirmButtonText: 'Tamam'
-                    });
-                }
-            }
-        });
-    }
     // Her satır için silme butonunu ekleme
     $('#kullanici_table tbody').on('click', '.btn-delete', function() {
         var data = table.row($(this).parents('tr')).data();
