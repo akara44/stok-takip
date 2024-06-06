@@ -108,7 +108,7 @@ $kBilgi = $sessionManager->kullaniciBilgi();
                 </div>
 
                 <div class="user">
-                    <img src="assets/imgs/customer01.jpg" alt="">
+                    <img src="../imgs/customer01.jpg" alt="">
                 </div>
             </div>
 

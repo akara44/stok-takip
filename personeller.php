@@ -281,7 +281,7 @@ $(document).ready(function() {
             cancelButtonText: 'İptal'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Silme işlemi için AJAX isteği gönder
+                // Silme işlemi için AJAX isteği gönderX
                 $.ajax({
                     type: "POST",
                     url: "sil.php",
