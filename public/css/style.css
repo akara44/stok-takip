@@ -79,7 +79,8 @@ transition: all 0.3s ease;
 }
 #sinif-1:checked ~ .category label .one,
 #sinif-2:checked ~ .category label .two,
-#sinif-3:checked ~ .category label .three{
+#sinif-3:checked ~ .category label .three,
+#sinif-4:checked ~ .category label .four{
 background: #9b59b6;
 border-color: #d9d9d9;
 }

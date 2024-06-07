@@ -10,7 +10,7 @@ require_once "template/header.php";
             <a href="">
               <div class="card">
                   <div>
-                      <div class="cardName">Türkiye</div>
+                      <div class="cardName">Battalgazi</div>
                       <div class="numbers">1453</div>
                   </div>
 
@@ -22,7 +22,7 @@ require_once "template/header.php";
             <a href="">
               <div class="card">
                   <div>
-                      <div class="cardName">Malatya</div>
+                      <div class="cardName">Yeşilyurt</div>
                       <div class="numbers">63</div>
                   </div>
 
@@ -34,7 +34,7 @@ require_once "template/header.php";
             <a href="">
               <div class="card">
                   <div>
-                      <div class="cardName">Battalgazi</div>
+                      <div class="cardName">Yazıhan</div>
                       <div class="numbers">12</div>
                   </div>
                   <div class="iconBx">
@@ -45,7 +45,7 @@ require_once "template/header.php";
             <a href="">
               <div class="card">
                   <div>
-                      <div class="cardName">Fuzuli Caddesi</div>
+                      <div class="cardName">Daranede</div>
                       <div class="numbers">2</div>
                   </div>
 

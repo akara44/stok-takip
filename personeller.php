@@ -24,12 +24,12 @@ if ($yetki != 1 && $yetki != 2) {
     exit;
 }
 ?>
-<link rel="stylesheet" href="public/css/personeller.css">
+<link rel="stylesheet" href="public/css/style.css">
 <!-- header and css -->
 
 <!-- üst butonlar -->
 <div class="cardBox">
-    <a href="">
+
         <div class="card">
             <div>
                 <div class="cardName">Personeller</div>
@@ -39,40 +39,35 @@ if ($yetki != 1 && $yetki != 2) {
                 <ion-icon name="people-outline"></ion-icon>
             </div>
         </div>
-    </a>
-    <a href="">
+ 
+
         <div class="card">
             <div>
-                <div class="cardName">Personel Ekle</div>
+                <div class="cardName">Süper Adminler</div>
                 <div class="numbers">63</div>
             </div>
             <div class="iconBx">
                 <ion-icon name="people-outline"></ion-icon>
             </div>
         </div>
-    </a>
-    <a href="">
         <div class="card">
             <div>
-                <div class="cardName">Personel Düzenle</div>
+                <div class="cardName">Adminler</div>
                 <div class="numbers">12</div>
             </div>
             <div class="iconBx">
                 <ion-icon name="people-outline"></ion-icon>
             </div>
         </div>
-    </a>
-    <a href="">
         <div class="card">
             <div>
-                <div class="cardName">Personel Yetkileri</div>
+                <div class="cardName">Çalışanlar</div>
                 <div class="numbers">2</div>
             </div>
             <div class="iconBx">
                 <ion-icon name="people-outline"></ion-icon>
             </div>
         </div>
-    </a>
 </div>
 
 <!-- üst butonlar -->
@@ -243,14 +238,6 @@ $(document).ready(function() {
         "pageLength": 10
     });
 
-    // Her satıra butonları ekleme
-    table.on('draw', function() {
-        $('#kullanici_table tbody tr').each(function() {
-            var data = table.row(this).data();
-            $(this).find('td:last-child').html('<button class="btn-delete" data-id="' + data.id + '">Sil</button>' +
-                                               '<button class="btn-update" data-id="' + data.id + '">Güncelle</button>');
-        });
-    });
     // Her satır için silme butonunu ekleme
     $('#kullanici_table tbody').on('click', '.btn-delete', function() {
         var data = table.row($(this).parents('tr')).data();
@@ -347,8 +334,8 @@ if ($_POST) {
         if (!empty($isim) && !empty($soyisim) && !empty($email) && !empty($sifre) && !empty($yetki)) {
             if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $tarih = date("Y-m-d");
-                $control = $baglanti->db->prepare("SELECT * FROM kullanici WHERE email = :email");
-                $control->bindParam(":email", $email, PDO::PARAM_STR);
+                $control = $baglanti->db->prepare("SELECT * FROM urunler WHERE urun_adi = :urun_adi");
+                $control->bindParam(":urun_adi", $isim, PDO::PARAM_STR);
                 $control->execute();
                 $sayi = $control->rowCount();
                 if ($sayi == 0) {
