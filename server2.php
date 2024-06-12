@@ -23,7 +23,7 @@ $sql = "SELECT * FROM urunler WHERE 1=1";
 // DataTable'dan gelen arama parametrelerini işle
 if (!empty($_GET['search']['value'])) {
     $searchValue = $_GET['search']['value'];
-    $sql .= " AND (id LIKE '%$searchValue%' OR isim LIKE '%$searchValue%' OR soyisim LIKE '%$searchValue%' OR email LIKE '%$searchValue%' OR yetki LIKE '%$searchValue%')";
+    $sql .= " AND (id LIKE '%$searchValue%' OR urun_adi LIKE '%$searchValue%' OR urun_magaza LIKE '%$searchValue%' OR urun_kategori LIKE '%$searchValue%' OR barkod LIKE '%$searchValue%')";
 }
 
 // Toplam veri sayısını al
@@ -31,7 +31,7 @@ $totalData = $conn->query($sql)->rowCount();
 
 // Sayfalama için gerekli parametreleri al
 $start = $_GET['start'] ?? 0; // Kaçıncı kayıttan başlayacağı
-$length = $_GET['length'] ?? 10; // Her sayfada kaç kayıt olacağı
+$length = $_GET['length'] ?? 8; // Her sayfada kaç kayıt olacağı
 
 // Veritabanından sadece belirli aralıktaki verileri çek
 $sql .= " LIMIT $start, $length";

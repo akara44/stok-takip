@@ -409,4 +409,3 @@ if ($_POST) {
 require_once "template/footer.php";
 ?>
 <!-- footer -->
-

@@ -221,7 +221,7 @@ input[type="number"]::-webkit-inner-spin-button {
             <th>Ürün Adı</th>
             <th>Adet</th>
             <th>Mağaza</th>
-            <th>Fiyat</th>
+            <th>Birim Fiyatı</th>
             <th>Kategori</th>
             <th>Açıklama</th>
             <th>Barkod</th>
@@ -255,7 +255,7 @@ $(document).ready(function() {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
         },
         "paging": true,
-        "pageLength": 10
+        "pageLength": 8
     });
 
     // Her satır için silme butonunu ekleme
@@ -266,7 +266,7 @@ $(document).ready(function() {
         // Yetki kontrolü
 
         var yetkiBilgisi = <?php echo json_encode($kBilgi['yetki']); ?>;
-        if (yetkiBilgisi != 1) {
+        if (yetkiBilgisi != 1 && yetkiBilgisi != 2) {
             Swal.fire({
                 icon: 'error',
                 title: 'Yetkiniz Yok!',
@@ -288,7 +288,7 @@ $(document).ready(function() {
             cancelButtonText: 'İptal'
         }).then((result) => {
             if (result.isConfirmed) {
-                // Silme işlemi için AJAX isteği gönderX
+                // Silme işlemi için AJAX isteği gönder
                 $.ajax({
                     type: "POST",
                     url: "sil2.php",
@@ -334,7 +334,7 @@ $(document).ready(function() {
     
 </script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-QOua7eWB6n9tVz6tvKfZ/mJzBW4hS2JYHz2K+GDQPZcHEw3oYIqC/JPbTDMRnCEl" crossorigin="anonymous">
+<link rel="stylesheet" href="  mhttps://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-QOua7eWB6n9tVz6tvKfZ/mJzBW4hS2JYHz2K+GDQPZcHEw3oYIqC/JPbTDMRnCEl" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script src="assets/page.js"></script>
 
